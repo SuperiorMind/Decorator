@@ -5,7 +5,7 @@ import oscarblancarte.ipd.decorator.impl.message.IMessage;
 /**
  *
  * @author Oscar Javier Blancarte Iturralde
- * @see http://www.oscarblancarteblog.com
+ * @see <a href="http://www.oscarblancarteblog.com">...</a>
  */
 public class SOAPEnvelopMessage extends MessageDecorator {
 
@@ -28,6 +28,10 @@ public class SOAPEnvelopMessage extends MessageDecorator {
                 + "   <soapenv:Body>\n"
                 + message.getContent()
                 + "\n"
+                + "   <m:footer>\n"
+                + message.getFooter()
+                + "\n"
+                + "   </m:footer>\n"
                 + "   </soapenv:Body>\n"
                 + "</soapenv:Envelope>";
         message.setContent(soap);

@@ -9,7 +9,7 @@ import sun.misc.BASE64Encoder;
 /**
  *
  * @author Oscar Javier Blancarte Iturralde
- * @see http://www.oscarblancarteblog.com
+ *
  */
 public class EncryptMessage extends MessageDecorator {
 
@@ -52,8 +52,11 @@ public class EncryptMessage extends MessageDecorator {
 
             c.init(Cipher.ENCRYPT_MODE, key);
             byte[] encVal = c.doFinal(message.getContent().getBytes());
+
             String encryptedValue = new BASE64Encoder().encode(encVal);
+
             message.setContent(encryptedValue);
+
             return message;
         } catch (Exception e) {
             e.printStackTrace();

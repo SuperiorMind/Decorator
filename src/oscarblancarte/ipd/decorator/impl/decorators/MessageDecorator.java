@@ -5,7 +5,7 @@ import oscarblancarte.ipd.decorator.impl.message.IMessage;
 /**
  *
  * @author Oscar Javier Blancarte Iturralde
- * @see http://www.oscarblancarteblog.com
+ *
  */
 public abstract class MessageDecorator implements IMessage {
     protected IMessage message;
@@ -22,5 +22,15 @@ public abstract class MessageDecorator implements IMessage {
     @Override
     public String getContent() {
         return message.getContent();
+    }
+
+    @Override
+    public void setFooter(String footer) {
+        message.setFooter(footer);
+    }
+
+    @Override
+    public String getFooter() {
+        return message.getFooter();
     }
 }

@@ -1,13 +1,17 @@
 package oscarblancarte.ipd.decorator.impl.message;
 
+import oscarblancarte.ipd.decorator.impl.decorators.Footer;
+
 /**
  *
  * @author Oscar Javier Blancarte Iturralde
- * @see http://www.oscarblancarteblog.com
+ *
  */
 public class TextMessage implements IMessage {
 
     private String content;
+
+    private String footer;
 
     public TextMessage() {
     }
@@ -37,5 +41,15 @@ public class TextMessage implements IMessage {
     @Override
     public void setContent(String content) {
         this.content = content;
+    }
+
+    @Override
+    public String getFooter() {
+        return footer;
+    }
+
+    @Override
+    public void setFooter(String footer) {
+        this.footer = footer;
     }
 }

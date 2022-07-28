@@ -1,15 +1,43 @@
 package oscarblancarte.ipd.decorator.impl.message;
 
+import oscarblancarte.ipd.decorator.impl.decorators.Footer;
+
 /**
  *
  * @author Oscar Javier Blancarte Iturralde
- * @see http://www.oscarblancarteblog.com
+ *
  */
 public class CustomerMessage implements IMessage {
 
     private String name;
     private String email;
     private String telephone;
+
+    private Footer footer;
+    public CustomerMessage(){
+
+    }
+
+    @Override
+    public String toString() {
+        return "CustomerMessage{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", footer=" + footer +
+                '}';
+    }
+
+    public CustomerMessage(String name, String email, String telephone, Footer footer) {
+        this.name = name;
+        this.email = email;
+        this.telephone = telephone;
+        this.footer = footer;
+    }
+
+    public void setFooter(Footer footer) {
+        this.footer = footer;
+    }
 
     public CustomerMessage(String name, String email, String telephone) {
         this.name = name;
@@ -52,12 +80,17 @@ public class CustomerMessage implements IMessage {
     }
 
     @Override
-    public String toString() {
-        return "CustomerMessage{" + "name=" + name + ", \nemail=" + email + ", telephone=" + telephone + '}';
+    public void setContent(String content) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void setContent(String content) {
+    public String getFooter() {
+        return this.footer.toString();
+    }
+
+    @Override
+    public void setFooter(String footer) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
